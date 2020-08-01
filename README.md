@@ -2,7 +2,8 @@
 
 ![N|Solid](https://github.com/muhammeteminturgut/SamuraiShodownJoystickEnabler/blob/master/screenshot.png?raw=true)
 
-SAMSHO JoyEnabler is a simple program that allows you to play Samurai Shodown 2019 PC version with joystick. Analog stick is not supported.
+SAMSHO JoyEnabler is a simple program that allows you to play Samurai Shodown 2019 PC version with joystick. Analog stick is not supported. 
+You must use the Dpad to move.
 
 ### [Download SAMSHO JoyEnabler v0.1](https://github.com/muhammeteminturgut/SamuraiShodownJoystickEnabler/releases/download/v0.1/SamshoJoyEnabler.exe)
 
