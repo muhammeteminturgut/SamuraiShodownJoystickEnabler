@@ -36,10 +36,12 @@ clock = pygame.time.Clock()
 pygame.joystick.init()
 textPrint = TextPrint()
 joystick_count=0
+joystick_keymap=(("7","8","0","9","p","u","o","I","space","backspace"),("a","s","f","d","v","z","c","x","space","backspace"))
+
 while not quitProgram:
     screen.fill(BLACK)
     textPrint.reset()
-    textPrint.tprint(screen,"Samurai Shodown 2019 Joystick Enabler v0.1")
+    textPrint.tprint(screen,"Samurai Shodown 2019 Joystick Enabler v0.2")
     textPrint.tprint(screen,"Muhammet Emin TURGUT | 01.07.2020")
     textPrint.tprint(screen," ")
     joystick_count = pygame.joystick.get_count()
@@ -106,93 +108,16 @@ while not quitProgram:
                     keyboard.press("b")
                 if event.value>-1 and event.value<0 and event.axis==0:
                     keyboard.release("b")
-
         if event.type == pygame.JOYBUTTONDOWN:
             if event.joy==0:
-                if event.button==0:
-                    keyboard.press("7")
-                if event.button==1:
-                    keyboard.press("8")
-                if event.button==2:
-                    keyboard.press("0")
-                if event.button==3:
-                    keyboard.press("9")
-                if event.button==4:
-                    keyboard.press("p")
-                if event.button==5:
-                    keyboard.press("u")
-                if event.button==6:
-                    keyboard.press("o")
-                if event.button==7:
-                    keyboard.press("I")
-                if event.button==8:
-                    keyboard.press("space")
-                if event.button==9:
-                    keyboard.press("backspace")
+                keyboard.press(joystick_keymap[0][event.button])
             if event.joy==1:
-                if event.button==0:
-                    keyboard.press("a")
-                if event.button==1:
-                    keyboard.press("s")
-                if event.button==2:
-                    keyboard.press("f")
-                if event.button==3:
-                    keyboard.press("d")
-                if event.button==4:
-                    keyboard.press("v")
-                if event.button==5:
-                    keyboard.press("z")
-                if event.button==6:
-                    keyboard.press("c")
-                if event.button==7:
-                    keyboard.press("x")
-                if event.button==8:
-                    keyboard.press("space")
-                if event.button==9:
-                    keyboard.press("backspace")
+                keyboard.press(joystick_keymap[1][event.button])
         if event.type == pygame.JOYBUTTONUP:
             if event.joy==0:
-                if event.button==0:
-                    keyboard.release("7")
-                if event.button==1:
-                    keyboard.release("8")
-                if event.button==2:
-                    keyboard.release("0")
-                if event.button==3:
-                    keyboard.release("9")
-                if event.button==4:
-                    keyboard.release("p")
-                if event.button==5:
-                    keyboard.release("u")
-                if event.button==6:
-                    keyboard.release("o")
-                if event.button==7:
-                    keyboard.release("I")
-                if event.button==8:
-                    keyboard.release("space")
-                if event.button==9:
-                    keyboard.release("backspace")
+                keyboard.release(joystick_keymap[0][event.button])
             if event.joy==1:
-                if event.button==0:
-                    keyboard.release("a")
-                if event.button==1:
-                    keyboard.release("s")
-                if event.button==2:
-                    keyboard.release("f")
-                if event.button==3:
-                    keyboard.release("d")
-                if event.button==4:
-                    keyboard.release("v")
-                if event.button==5:
-                    keyboard.release("z")
-                if event.button==6:
-                    keyboard.release("c")
-                if event.button==7:
-                    keyboard.release("x")
-                if event.button==8:
-                    keyboard.release("space")
-                if event.button==9:
-                    keyboard.release("backspace")                
+                keyboard.release(joystick_keymap[1][event.button])                
 
     pygame.display.flip()
     clock.tick(20)
