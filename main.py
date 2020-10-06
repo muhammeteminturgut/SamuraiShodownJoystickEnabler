@@ -109,15 +109,9 @@ while not quitProgram:
                 if event.value>-1 and event.value<0 and event.axis==0:
                     keyboard.release("b")
         if event.type == pygame.JOYBUTTONDOWN:
-            if event.joy==0:
-                keyboard.press(joystick_keymap[0][event.button])
-            if event.joy==1:
-                keyboard.press(joystick_keymap[1][event.button])
+            keyboard.press(joystick_keymap[event.joy][event.button])
         if event.type == pygame.JOYBUTTONUP:
-            if event.joy==0:
-                keyboard.release(joystick_keymap[0][event.button])
-            if event.joy==1:
-                keyboard.release(joystick_keymap[1][event.button])                
+            keyboard.release(joystick_keymap[event.joy][event.button])          
 
     pygame.display.flip()
     clock.tick(20)
