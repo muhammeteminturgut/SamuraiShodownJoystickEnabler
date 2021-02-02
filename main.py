@@ -1,4 +1,4 @@
-import ctypes
+import ctypes, sys
 ctypes.windll.user32.SetProcessDPIAware()
 import pygame
 import os
@@ -27,6 +27,12 @@ class TextPrint(object):
     def unindent(self):
         self.x -= 10
 
+is_admin=ctypes.windll.shell32.IsUserAnAdmin()
+if is_admin==False:
+    ctypes.windll.user32.MessageBoxW(None, "You'll need to provide administrator permission.", "Error", 0x30)
+    ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+    os._exit(0)
+
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
 screen = pygame.display.set_mode((350, 200))
@@ -41,7 +47,7 @@ joystick_keymap=(("7","8","0","9","p","u","o","I","space","backspace"),("a","s",
 while not quitProgram:
     screen.fill(BLACK)
     textPrint.reset()
-    textPrint.tprint(screen,"Samurai Shodown 2019 Joystick Enabler v0.2")
+    textPrint.tprint(screen,"Samurai Shodown 2019 Joystick Enabler v0.3")
     textPrint.tprint(screen,"Muhammet Emin TURGUT | 01.07.2020")
     textPrint.tprint(screen," ")
     joystick_count = pygame.joystick.get_count()
