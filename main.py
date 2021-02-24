@@ -35,6 +35,7 @@ if is_admin==False:
 
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
+pygame.font.init()
 screen = pygame.display.set_mode((350, 200))
 pygame.display.set_caption("SAMSHO JoyEnabler")
 quitProgram = False
