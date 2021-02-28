@@ -1,4 +1,4 @@
-# SAMSHO JoyEnabler
+# Samurai Shodown Joystick Enabler
 
 ![N|Solid](https://github.com/muhammeteminturgut/SamuraiShodownJoystickEnabler/blob/master/screenshot.png?raw=true)
 
